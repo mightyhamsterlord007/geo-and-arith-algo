@@ -1,21 +1,26 @@
 function patternDetect(arr) {
   
-    var arith, geo;
+    // var arith, geo;
 
-    for (let i = 0; i < arr.length; i++) {
+    // for (let i = 0; i < arr.length; i++) {
 
-        arith = arr[arr.length - 1] - arr[arr.length - 2];
-        geo = arr[arr.length - 1] / arr[arr.length - 2];
+    //     arith = arr[arr.length - 1] - arr[arr.length - 2];
+    //     geo = arr[arr.length - 1] / arr[arr.length - 2];
 
-        if (arr[i] + arith === arr[i + 1]) {
-            return 'Arithmetic';
-        } else if (arr[i] * geo === arr[i + 1]) {
-            return 'Geometric';
-        } else {
-            return -1;
-        }
+    //     if (arr[i] + arith === arr[i + 1]) {
+    //         return 'Arithmetic';
+    //     } else if (arr[i] * geo === arr[i + 1]) {
+    //         return 'Geometric';
+    //     } else {
+    //         return -1;
+    //     }
 
-    }
+    // }
+    if (pattern[3] - pattern[2] === pattern[2] - pattern[1] && pattern[2] - pattern[1] === pattern[1] - pattern[0]) {
+        return "Arithmetic";
+    } else if (pattern[3] / pattern[2] === pattern[2] / pattern[1] && pattern[2] / pattern[1] === pattern[1] / pattern[0]) {
+        return "Geometric";
+    } else return -1;
 
 }
 // patternDetect([2, 4, 6, 8]);
